@@ -427,3 +427,4 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/codigo/componentes/consultas/Consultas/CapaModelo_Consultas/Temporales/ClsConsultasDatos.cs
