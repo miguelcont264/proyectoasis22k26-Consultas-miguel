@@ -14,20 +14,25 @@ namespace CapaVista_CbCampos
     public partial class UCComboboxCampos : UserControl
     {
         ClsObtenerDatos _Controlador = new ClsObtenerDatos();
-        string _TablaActual;
+      
         public UCComboboxCampos()
         {
             InitializeComponent();
         }
 
-        public void ConsultasMetCargarCampos(string tabla)
+        public void llenarCombo(string _tabla)
         {
-            
+           var dtTabla = _Controlador.enviarDatos(_tabla);
+
             ConsultasCboCampo.Items.Clear();
 
-            _Controlador.ConsultasMetPoblarComboCampos(
-                tabla,
-                 ConsultasCboCampo);
+           foreach (DataColumn columna in dtTabla.Columns)
+            {
+                ConsultasCboCampo.Items.Add(columna.ColumnName);
+            }
+
+            ConsultasCboCampo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            ConsultasCboCampo.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
     }

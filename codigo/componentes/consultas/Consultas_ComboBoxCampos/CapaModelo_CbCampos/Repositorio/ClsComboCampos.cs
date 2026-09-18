@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Text;
@@ -8,55 +9,28 @@ using System.Windows.Forms;
 
 namespace CapaModelo_CbCampos.Repositorio
 {
-    public class ClsComboCampos
+    public class ClsComboCampos : ClsConexion
     {
 
-        public string Tabla { get; set; }
 
-        private ClsConexion _Conexion = new ClsConexion();
-        public void ConsultasMetPopularComboBox(string Tabla, ComboBox CboDestino)
+        public DataTable ObtenerCampos(string tabla)
         {
-            CboDestino.Items.Clear();
+            string sql = "SELECT * FROM " + tabla + ";";
 
-            string Query = @"
-        SELECT COLUMN_NAME
-        FROM INFORMATION_SCHEMA.COLUMNS
-        WHERE TABLE_SCHEMA = DATABASE()
-        AND TABLE_NAME = ?
-        ORDER BY ORDINAL_POSITION";
-
-            OdbcConnection Conn = _Conexion.ConsultasFuncConexion();
-
-            try
+            using (OdbcCommand command = new OdbcCommand(sql, ConsultasFuncConexion()))
             {
-                using (OdbcCommand Cmd = new OdbcCommand(Query, Conn))
+                using (OdbcDataAdapter adaptador = new OdbcDataAdapter(command))
                 {
-                    Cmd.Parameters.AddWithValue("@tabla", Tabla);
+                    DataTable dtDatos = new DataTable();
+                    adaptador.Fill(dtDatos);
 
-                    using (OdbcDataReader Reader = Cmd.ExecuteReader())
-                    {
-                        while (Reader.Read())
-                        {
-                            CboDestino.Items.Add(
-                                Reader["COLUMN_NAME"].ToString()
-                            );
-                        }
-                    }
+                    return dtDatos;
                 }
             }
-            finally
-            {
-                _Conexion.ConsultasProcDesconexion(Conn);
-            }
-        }
-
-        public void ConsultasMetPopularComboBox(ComboBox CboDestino)
-        {
-            ConsultasMetPopularComboBox(this.Tabla, CboDestino);
         }
 
 
-
+       
 
     }
 }
