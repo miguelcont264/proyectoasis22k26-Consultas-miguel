@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel;
 using CapaControlador_Consultas;
 using System.Diagnostics.Eventing.Reader;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace CapaVista_Consultas.Controles
 {
@@ -19,10 +22,10 @@ namespace CapaVista_Consultas.Controles
             {
                 ConsultasMetCargarOperadores();
 
-                ConsultasMetCargarCampos();
+               ConsultasMetCargarCampos();
             }
         }
-
+        
         private void ConsultasMetCargarCampos()
         {
             ConsultasCboOperadorCampo.Items.Clear();
@@ -32,6 +35,7 @@ namespace CapaVista_Consultas.Controles
                 ConsultasCboOperadorCampo);
         }
 
+        
         private void ConsultasMetCargarOperadores()
         {
             ConsultasCboOperador.Items.Clear();

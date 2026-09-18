@@ -32,8 +32,8 @@ namespace CapaVista_Consultas.Controles
             ConsultasDgvConsultasReutilizables.Columns.Clear();
             DataTable DtConsultas = Consultas.ConsultasFuncCargarConsultas();
             ConsultasDgvConsultasReutilizables.DataSource = DtConsultas;
-            ConsultasDgvConsultasReutilizables.Columns["Query"].Visible = false;
-            ConsultasDgvConsultasReutilizables.Columns["Tabla"].Visible = false;
+            ConsultasDgvConsultasReutilizables.Columns["Query"].Visible = true;
+            ConsultasDgvConsultasReutilizables.Columns["Tabla"].Visible = true;
         }
         private void ConsultasBtnIngresar_Click(object sender, EventArgs e)
         {

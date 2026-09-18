@@ -93,7 +93,7 @@
             this.ConsultasUcAgregarFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ConsultasUcAgregarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(231)))), ((int)(((byte)(218)))));
             this.ConsultasUcAgregarFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ConsultasUcAgregarFiltro.Location = new System.Drawing.Point(0, 31);
+            this.ConsultasUcAgregarFiltro.Location = new System.Drawing.Point(5, 26);
             this.ConsultasUcAgregarFiltro.Margin = new System.Windows.Forms.Padding(5);
             this.ConsultasUcAgregarFiltro.Name = "ConsultasUcAgregarFiltro";
             this.ConsultasUcAgregarFiltro.Size = new System.Drawing.Size(876, 100);

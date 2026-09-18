@@ -23,6 +23,7 @@ namespace CapaVista_Consultas
             InitializeComponent();
 
             ConsultasMetSuscribirEventos();
+             
         }
 
         public FrmConsultasSimples(string Tabla)

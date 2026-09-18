@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAgregarFiltro));
             this.ConsultasTlpPrincipal = new System.Windows.Forms.TableLayoutPanel();
             this.ConsultasLblCampo = new CapaVista_Consultas.Componentes.ClsEtiquetaConsultas();
-            this.ConsultasCboCampo = new CapaVista_Consultas.Componentes.ClsListaComboBoxConsultas();
             this.ConsultasLblOperador = new CapaVista_Consultas.Componentes.ClsEtiquetaConsultas();
             this.ConsultasCboOperador = new CapaVista_Consultas.Componentes.ClsListaComboBoxConsultas();
             this.ConsultasLblValor = new CapaVista_Consultas.Componentes.ClsEtiquetaConsultas();
             this.ConsultasTxtValor = new CapaVista_Consultas.Componentes.ClsCajaTextoConsultas();
             this.ConsultasBtnBuscar = new CapaVista_Consultas.Componentes.ClsBotonConsultas();
             this.ConsultasBtnRefrescar = new CapaVista_Consultas.Componentes.ClsBotonConsultas();
+            this.ucComboboxCampos1 = new CapaVista_CbCampos.UCComboboxCampos();
             this.ConsultasTlpPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,13 +51,13 @@
             this.ConsultasTlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.ConsultasTlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasLblCampo, 0, 0);
-            this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasCboCampo, 0, 1);
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasLblOperador, 1, 0);
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasCboOperador, 1, 1);
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasLblValor, 2, 0);
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasTxtValor, 2, 1);
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasBtnBuscar, 3, 0);
             this.ConsultasTlpPrincipal.Controls.Add(this.ConsultasBtnRefrescar, 4, 0);
+            this.ConsultasTlpPrincipal.Controls.Add(this.ucComboboxCampos1, 0, 1);
             this.ConsultasTlpPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConsultasTlpPrincipal.Location = new System.Drawing.Point(0, 0);
             this.ConsultasTlpPrincipal.Margin = new System.Windows.Forms.Padding(0);
@@ -84,22 +84,6 @@
             this.ConsultasLblCampo.TabIndex = 17;
             this.ConsultasLblCampo.Text = "Campo";
             this.ConsultasLblCampo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ConsultasCboCampo
-            // 
-            this.ConsultasCboCampo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConsultasCboCampo.BackColor = System.Drawing.Color.White;
-            this.ConsultasCboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ConsultasCboCampo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultasCboCampo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ConsultasCboCampo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(74)))), ((int)(((byte)(99)))));
-            this.ConsultasCboCampo.FormattingEnabled = true;
-            this.ConsultasCboCampo.Location = new System.Drawing.Point(3, 39);
-            this.ConsultasCboCampo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ConsultasCboCampo.Name = "ConsultasCboCampo";
-            this.ConsultasCboCampo.Size = new System.Drawing.Size(192, 31);
-            this.ConsultasCboCampo.TabIndex = 20;
             // 
             // ConsultasLblOperador
             // 
@@ -199,6 +183,13 @@
             this.ConsultasBtnRefrescar.TabIndex = 23;
             this.ConsultasBtnRefrescar.UseVisualStyleBackColor = false;
             // 
+            // ucComboboxCampos1
+            // 
+            this.ucComboboxCampos1.Location = new System.Drawing.Point(3, 38);
+            this.ucComboboxCampos1.Name = "ucComboboxCampos1";
+            this.ucComboboxCampos1.Size = new System.Drawing.Size(171, 27);
+            this.ucComboboxCampos1.TabIndex = 24;
+            // 
             // UcAgregarFiltro
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -219,9 +210,9 @@
         private Componentes.ClsEtiquetaConsultas ConsultasLblCampo;
         private Componentes.ClsEtiquetaConsultas ConsultasLblOperador;
         private Componentes.ClsEtiquetaConsultas ConsultasLblValor;
-        private Componentes.ClsListaComboBoxConsultas ConsultasCboCampo;
         private Componentes.ClsListaComboBoxConsultas ConsultasCboOperador;
         private Componentes.ClsCajaTextoConsultas ConsultasTxtValor;
         private Componentes.ClsBotonConsultas ConsultasBtnRefrescar;
+        private CapaVista_CbCampos.UCComboboxCampos ucComboboxCampos1;
     }
 }

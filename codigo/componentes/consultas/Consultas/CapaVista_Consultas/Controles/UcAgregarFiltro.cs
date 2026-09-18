@@ -12,7 +12,8 @@ namespace CapaVista_Consultas.Controles
         private readonly ClsControladorFiltroSimple _Controlador =
             new ClsControladorFiltroSimple();
 
-        private string _TablaActual;
+
+        public string _TablaActual = ClsTablaSeleccionada.ConsultasFuncObtenerTabla();
 
         public event EventHandler<ClsArgumentosFiltro> ConsultasEvtBuscarSolicitado;
 
@@ -30,13 +31,17 @@ namespace CapaVista_Consultas.Controles
             if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
             {
                 ConsultasMetCargarOperadores();
+                ucComboboxCampos1.ConsultasMetCargarCampos(_TablaActual);
+
             }
+
         }
         public void ConsultasProcActualizarTabla(string Tabla)
         {
+            
             if (string.IsNullOrWhiteSpace(Tabla))
             {
-                ConsultasCboCampo.Items.Clear();
+                /*ConsultasCboCampo.Items.Clear();*/
                 _TablaActual = null;
                 return;
             }
@@ -45,16 +50,17 @@ namespace CapaVista_Consultas.Controles
 
             ConsultasMetCargarCampos();
         }
-
+        /*
         public void ConsultasProcLimpiar()
         {
             ConsultasCboCampo.SelectedIndex = -1;
             ConsultasCboOperador.SelectedIndex = -1;
             ConsultasTxtValor.Clear();
         }
-
+        */
         private void ConsultasMetCargarCampos()
         {
+            /*
             ConsultasCboCampo.Items.Clear();
 
             try
@@ -76,6 +82,7 @@ namespace CapaVista_Consultas.Controles
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+            */
         }
 
         private void ConsultasMetCargarOperadores()
@@ -93,7 +100,7 @@ namespace CapaVista_Consultas.Controles
 
         private void ConsultasBtnBuscar_Click(object sender, EventArgs e)
         {
-            string Campo = ConsultasCboCampo.SelectedItem == null
+           /* string Campo = ConsultasCboCampo.SelectedItem == null
                 ? string.Empty
                 : ConsultasCboCampo.SelectedItem.ToString();
 
@@ -124,12 +131,17 @@ namespace CapaVista_Consultas.Controles
                 ConsultasEvtBuscarSolicitado(
                     this,
                     new ClsArgumentosFiltro(Campo, Operador, Valor));
-            }
+            }*/
+        }
+
+        public void cargar()
+        {
+            
         }
 
         private void ConsultasBtnRefrescar_Click(object sender, EventArgs e)
         {
-            ConsultasProcLimpiar();
+          /*  ConsultasProcLimpiar();*/
 
             if (ConsultasEvtRefrescarSolicitado != null)
             {
@@ -151,6 +163,8 @@ namespace CapaVista_Consultas.Controles
 
         }
     }
+
+    
 
     public class ClsArgumentosFiltro : EventArgs
     {
