@@ -2,22 +2,26 @@
  * INICIO DEL CÓDIGO — Jose Torres
  * Carné: 0901-23-1091 | Fecha: 15/10/2026
  * Área: Ventas y cuentas por cobrar
- * Propósito: Abrir directamente el MDI del módulo de Ventas.
+ * Propósito: Iniciar Ventas mediante el login del componente de Seguridad.
  */
 using System;
 using System.Windows.Forms;
+using CapaVista_Seguridad;
 
-namespace Ejecutable_Ventas
+namespace Ejecucion_Ventas
 {
     internal static class Program
     {
         [STAThread]
         private static void Main()
         {
-            // El MDI es la ventana principal; al cerrarlo termina la aplicación.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CapaVista_Ventas.FrmMdiVentas());
+            using (var Login = new CapaVista_Seguridad.FrmLogin())
+            {
+                // Conserva la seleccion de modulo y la autenticacion originales de Seguridad.
+                Application.Run(Login);
+            }
         }
     }
 }

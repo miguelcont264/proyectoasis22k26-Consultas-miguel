@@ -5,28 +5,29 @@
  * Carné : 0901-23-1998
  * Fecha : 17/10/2026
  * ==================================================================
- * Propósito : arranca el módulo directamente en el MDI.
+ * Propósito : abre el login de Seguridad; desde ahí se entra al MDI de
+ *  Contabilidad con el usuario y los permisos reales.
  * ===================================================================
 */
 
 using System;
 using System.Windows.Forms;
+// Inicio de cambio: Gabriel André Guillén Pocón - 0901-23-1998 - 03/11/2026
+using CapaVista_Seguridad;
+// Fin de cambio: Gabriel André Guillén Pocón - 0901-23-1998 - 03/11/2026
 
 namespace Ejecucion_Contabilidad
 {
-    // Punto de entrada del ejecutable.
     internal static class ClsPrograma
     {
-        /// <summary>
-        /// Inicia Contabilidad directamente en el MDI.
-        /// </summary>
         [STAThread]
-        // Main conserva su nombre porque es el punto de entrada reconocido por C#.
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CapaVista_Contabilidad.FrmMDIContabilidad());
+            // Inicio de cambio: Gabriel André Guillén Pocón - 0901-23-1998 - 03/11/2026
+            Application.Run(new FrmLogin());
+            // Fin de cambio: Gabriel André Guillén Pocón - 0901-23-1998 - 03/11/2026
         }
     }
 }
